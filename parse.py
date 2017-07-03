@@ -56,7 +56,7 @@ def clean(text):
     for r in result:
       text = re.sub('\[\[[^\]]*\|([^\]]*)\]\]', r, text, 1)
 
-  return text
+  return text.strip()
 
 ### Parsing input files
 ###
@@ -89,14 +89,16 @@ for canto in canti:
       terzina_cleaned = [verso for verso in terzina.split('\n') if len(verso) > 1]
 
       for (j, verso) in enumerate(terzina_cleaned):
-        if verso == " " or verso == "":
+        cleaned_text = clean(verso)
+
+        if cleaned_text == "":
           continue
 
         terzina_data['children'].append({
           "type": "Verso",
           "number": 3*i + j+1,
-          "text": clean(verso),
-          "text_length": len(verso)
+          "text": cleaned_text,
+          "text_length": len(cleaned_text)
         })
 
     volume = volume_index[canto.split('/')[0]]
