@@ -13,7 +13,7 @@ Wikitexts have been downloaded using Wikisource API returning JSON objects. An U
 
 ### parse.py
 This python script loads each JSON file contained in the wikisource_data folder, parse and clean the wikitext it contains, and produces a structured JSON file of the entire poem: *divina_commedia.json*. It has the following structure:
-'''
+```
 {
   "name": "Divina Commedia",
   "author": "Dante Alighieri",
@@ -58,4 +58,4 @@ This python script loads each JSON file contained in the wikisource_data folder,
     },
     ...
   ]
-'''
+```
