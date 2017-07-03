@@ -9,7 +9,8 @@ The original italian text of the poem has been downloaded from [Wikisource](http
 ### download.py
 This is the python script used for downloading all the _wikitexts_ of every cantos of the poem. The repository already includes the texts under the *wikisource_data* folder.
 
-Wikitexts have been downloaded using Wikisource API returning JSON objects. An URL example is: https://it.wikisource.org/w/api.php?action=query&titles=Divina_Commedia/Inferno/Canto%20I&prop=revisions&rvprop=content&format=json
+Wikitexts have been downloaded using Wikisource API returning JSON objects. An URL example is: 
+`https://it.wikisource.org/w/api.php?action=query&titles=Divina_Commedia/Inferno/Canto%20I&prop=revisions&rvprop=content&format=json`
 
 ### parse.py
 This python script loads each JSON file contained in the wikisource_data folder, parse and clean the wikitext it contains, and produces a structured JSON file of the entire poem: *divina_commedia.json*. It has the following structure:
