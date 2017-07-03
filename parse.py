@@ -49,6 +49,13 @@ def clean(text):
   # Remove markup
   text = re.sub('{{[^\|}]*\|[^\|}]*}}', '', text)
 
+  # Remove square brackets annotations
+  result = re.findall('\[\[[^\]]*\|([^\]]*)\]\]', text)
+
+  if len(result) > 0:
+    for r in result:
+      text = re.sub('\[\[[^\]]*\|([^\]]*)\]\]', r, text, 1)
+
   return text
 
 ### Parsing input files
