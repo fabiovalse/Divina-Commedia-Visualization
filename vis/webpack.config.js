@@ -5,8 +5,8 @@ console.log(__dirname);
 module.exports = {
   entry: './src/main.coffee',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: 'dist/',
+    path: path.resolve(__dirname, './docs'),
+    publicPath: 'docs/',
     filename: 'build.js'
   },
   module: {
@@ -45,7 +45,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      'vue$': 'vue/docs/vue.common.js'
     }
   },
   devServer: {
