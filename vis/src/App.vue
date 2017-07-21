@@ -14,8 +14,7 @@
 
           <g class="part" 
              v-for="(part, i) in poem.children"
-             v-if="in_viewport(i*part_w, 0, part_w)"
-             :transform="'translate(' + i*part_w + ', 0)'">
+             :transform="'translate(' + (i*part_w+5) + ', 0)'">
             <text class="part_title"
                   :x="w/6"
                   y="20">
@@ -23,11 +22,10 @@
             </text>
 
             <g v-for="(cantos, j) in part.children"
-               v-if="in_viewport((i*w/3) + (j*(w/3-10)/part.children.length), 65, (w/3-10)/part.children.length)"
-               :transform="'translate(' + j*(w/3-10)/part.children.length + ', 65)'">
+               :transform="'translate(' + j*(w/3-10)/part.children.length + ', 60)'">
               <text class="cantos_title"
                     x="5"
-                    y="5"
+                    y="6"
                     transform="rotate(-90)">
                 {{cantos.name.split(' ')[1]}}
               </text>
@@ -74,11 +72,9 @@ export default {
     @$el.querySelector('.main').style.setProperty '--height', "#{@h}px"
 
   methods:
-    in_viewport: (x, y, dx) -> x+dx >= @x and x <= @x+@dx
-
     search: () ->
       value = d3.select('input.search').node().value
-      @target = if value isnt '' then value else undefined
+      @target = if value isnt '' and value.length > 1 then value else undefined
 
     selected: (target, text) -> target? and text.toLowerCase().indexOf(target.toLowerCase()) >= 0
 
@@ -94,6 +90,7 @@ export default {
   --main-text-color: #432621;
   --sec-text-color: rgba(0,0,0,0.54);
   --selection-color: #f75638;
+  --topbar-height: 45px;
 }
 
 html, body {
@@ -108,18 +105,17 @@ html, body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 800px;
 }
 .app .topbar {
   width: 100%;
-  height: 50px;
+  height: var(--topbar-height);
   box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
   z-index: 1;
 }
 .app svg {
   width: 100%;
-  flex-grow: 1;
-  padding-top: 5px;
+  height: 100%;
   background: #fbf9e8;
 }
 .app svg .main {
@@ -177,17 +173,9 @@ line:hover {
   width: 250px;
   border-bottom: 1px solid #BBB;
   padding: 5px;
-  margin: 10px;
+  margin: 5px 0px 9px 10px;
   font-size: 15px;
   font-family: 'Roboto Slab', serif;
 }
-
-/*.viewport {
-  width: calc(var(--width) - 10px);
-  height: calc(var(--height) - 10px);
-  stroke: blue;
-  fill: transparent;
-  stroke-width: 3px;
-}*/
 
 </style>
