@@ -97,23 +97,20 @@ export default {
   width: calc(var(--width) / 3);
 }
 .poem .part_title {
-  fill: var(--main-text-color);
+  fill: var(--text-color-3);
   font-size: 14px;
   text-anchor: middle;
   cursor: pointer;
 }
-.poem .part_title:hover {
-  fill: var(--selection-color);
-}
 
 .poem .cantos_title {
-  fill: var(--main-text-color);
+  fill: var(--text-color-2);
   font-size: 10px;
 }
 
 .poem line {
-  stroke: #432621;
-  stroke-width: 1;
+  stroke: var(--text-color-1);
+  stroke-width: 2;
   shape-rendering: crispEdges;
 }
 .poem line:hover {

@@ -46,6 +46,6 @@ export default {
 </style>
 <style>
 .cantos .tercet .line .highlighted {
-  color: var(--selection-color);
+  background: var(--selection-color);
 }
 </style>

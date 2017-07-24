@@ -32,10 +32,13 @@ export default {
 <style>
 :root {
   --main-font-family: 'Roboto Slab', serif;
-  --main-text-color: #432621;
   --main-background-color: #fbf9e8;
-  --sec-text-color: rgba(0,0,0,0.54);
+  
+  --text-color-1: #909090;
+  --text-color-2: #708090;
+  --text-color-3: #0d7074;
   --selection-color: #f75638;
+  
   --topbar-height: 45px;
 }
 
@@ -52,11 +55,15 @@ html, body {
   flex-direction: column;
   width: 100%;
   height: 800px;
+  padding-top: var(--topbar-height);
 }
 
 .app .topbar {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: var(--topbar-height);
+  background: #FFF;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
   z-index: 1;
 }
