@@ -33,7 +33,7 @@ export default {
 <style>
 :root {
   --main-font-family: 'Roboto Slab', serif;
-  --main-background-color: #fbf9e8;
+  --main-background-color: #fff4e3;
   
   --text-color-1: #909090;
   --text-color-2: #708090;
