@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <div class="topbar">
+      <div class="title">La Divina<br>Commedia</div>
       <input
         placeholder="Search"
         class="search"
@@ -61,6 +62,9 @@ html, body {
 .app .topbar {
   position: fixed;
   top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   height: var(--topbar-height);
   background: #FFF;
@@ -76,5 +80,27 @@ html, body {
   margin: 5px 0px 9px 10px;
   font-family: var(--main-font-family);
   font-size: 15px;
+  color: #BBB;
+}
+
+.app .topbar .title {
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 0px 10px 0px 10px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.app .topbar .search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #BBB;
+}
+.app .topbar .search::-moz-placeholder { /* Firefox 19+ */
+  color: #BBB;
+}
+.app .topbar .search:-ms-input-placeholder { /* IE 10+ */
+  color: #BBB;
+}
+.app .topbar .search:-moz-placeholder { /* Firefox 18- */
+  color: #BBB;
 }
 </style>

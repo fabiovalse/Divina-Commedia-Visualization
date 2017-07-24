@@ -77,7 +77,7 @@ export default {
         name: 'goto_text',
         params:
           book: book
-          cantos: cantos.name
+          cantos: cantos.name.replace(' ','')
 
 }
 </script>

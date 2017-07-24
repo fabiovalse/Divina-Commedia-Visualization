@@ -1,5 +1,6 @@
 <template>
   <div class="cantos" v-if="selection !== undefined">
+    <div class="title">{{title}}</div>
     <div class="tercet" v-for="(tercet, i) in selection.children">
       <div class="line"
            v-for="line in tercet.children"
@@ -16,6 +17,7 @@ export default {
   computed:
     selection: () -> @$store.state.path
     text_search: () -> @$store.state.text_search
+    title: () -> "#{@$router.currentRoute.params.book} - #{@selection.name}"
 
   methods: 
     get_highlighted: (text_search, text) ->
@@ -30,11 +32,17 @@ export default {
   padding-top: 40px;
   background: var(--main-background-color);
 }
-.cantos .tercet {
-  position: relative;
+.cantos > * {
   width: 350px;
   margin: auto;
   margin-bottom: 20px;
+}
+.cantos .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.cantos .tercet {
+  position: relative;
 }
 .cantos .tercet .number {
   position: absolute;
