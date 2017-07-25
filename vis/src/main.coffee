@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 store = new Vuex.Store(Store)
 
 router = new VueRouter({
+  base: '/dist/'
   mode: 'history'
   scrollBehavior: (to, from, savedPosition) ->
     if to.name isnt 'main'
