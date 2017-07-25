@@ -13,24 +13,11 @@ Vue.use(VueRouter)
 store = new Vuex.Store(Store)
 
 router = new VueRouter({
-  base: '/dist/'
-  mode: 'history'
-  scrollBehavior: (to, from, savedPosition) ->
-    if to.name isnt 'main'
-      offset = 0
-
-      if store.state.tercet.number > 1
-        offset = document.querySelectorAll('.tercet')[store.state.tercet.number-1].getBoundingClientRect().top-63
-
-      return {x: 0, y: offset}
-    else
-      return {x: 0, y: 0}
   routes: [
     {
       name: 'main'
       path: '/'
       component: Poem
-      props: true
     }
     {
       name: 'goto_text'

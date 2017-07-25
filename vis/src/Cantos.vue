@@ -19,6 +19,15 @@ export default {
     text_search: () -> @$store.state.text_search
     title: () -> "#{@$router.currentRoute.params.book} - #{@selection.name}"
 
+  mounted: () ->
+    offset = 0
+      
+    if @$store.state.tercet.number > 1
+      offset = document.querySelectorAll('.tercet')[@$store.state.tercet.number-1].getBoundingClientRect().top-63
+      console.log offset
+
+    window.scrollTo 0, offset
+
   methods: 
     get_highlighted: (text_search, text) ->
       re = new RegExp text_search, 'gi'
