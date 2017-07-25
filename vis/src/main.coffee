@@ -4,13 +4,26 @@ import Poem from './Poem.vue'
 import Cantos from './Cantos.vue'
 import Store from './Store.coffee'
 
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+store = new Vuex.Store(Store)
+
 router = new VueRouter({
+  mode: 'history'
+  scrollBehavior: (to, from, savedPosition) ->
+    if to.name isnt 'main'
+      offset = 0
+
+      if store.state.tercet.number > 1
+        offset = document.querySelectorAll('.tercet')[store.state.tercet.number-1].getBoundingClientRect().top-63
+
+      return {x: 0, y: offset}
+    else
+      return {x: 0, y: 0}
   routes: [
     {
       name: 'main'
@@ -25,8 +38,6 @@ router = new VueRouter({
     }
   ]
 })
-
-store = new Vuex.Store(Store)
 
 app = new Vue
   el: '#app'

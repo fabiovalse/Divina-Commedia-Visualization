@@ -32,7 +32,7 @@
                       y1="0"
                       :x2="line.text_length/6"
                       y2="0"
-                      @click="goto(part.name, cantos)">
+                      @click="goto(part.name, cantos, tercet, line)">
                 </line>
               </g>
             </g>
@@ -71,7 +71,10 @@ export default {
   methods:
     selected: (text) -> @target? and text.toLowerCase().indexOf(@target.toLowerCase()) >= 0
 
-    goto: (book, cantos) ->
+    goto: (book, cantos, tercet, line) ->
+      @$store.commit 'set_tercet', tercet
+      #@$store.commit 'set_line', line
+
       @$store.commit 'set_path', cantos
       @$router.push
         name: 'goto_text',
