@@ -35,7 +35,7 @@ canti = ["Inferno/Canto I", "Inferno/Canto II", "Inferno/Canto III", "Inferno/Ca
 ###
 def clean(text):
   # Remove row numbers
-  text = re.sub('{{R\|[0-9]*}}', '', text)
+  text = re.sub('{{R\|[0-9]*}}', '', text, flags=re.IGNORECASE)
   
   # Remove annotations
   result = re.search('{{[^\|}]*\|[^\|}]*\|([^\|}]*)}}', text)
