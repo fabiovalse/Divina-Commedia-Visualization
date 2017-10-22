@@ -1,7 +1,7 @@
 # Divina Commedia JSON
 The well-known [Divina Commedia](https://en.wikipedia.org/wiki/Divine_Comedy) wrote by Dante Alighieri is one of the greatest works of world literature and characterized by a very peculiar structure. It is composed by three parts, Inferno, Purgatorio and Paradiso, each of them consisting in 33 cantos (An initial canto, serving as an introduction to the poem and generally considered to be part of the first cantica, brings the total number of cantos to 100). Additionally, the verse scheme used, [terza rima](https://en.wikipedia.org/wiki/Terza_rima), is hendecasyllabic, with the lines composing [tercets](https://en.wikipedia.org/wiki/Tercet) according to the rhyme scheme aba, bcb, cdc, ded, ...
 
-Due to the importance of the poem and its specific structure this repository provides a structured JSON file that can be used for diffent kind of processes such as text analysis or data visualization. Take a look at this [visualization demo](https://fabiovalse.github.io/DivinaCommediaJSON/vis/) for searching words within the poem.
+Due to the importance of the poem and its specific structure this repository provides a structured JSON file that can be used for diffent kind of processes such as text analysis or data visualization. Take a look at this [visualization demo](https://fabiovalse.github.io/Divina-Commedia-JSON/vis/) for searching words within the poem.
 
 The original italian text of the poem has been downloaded from [Wikisource](https://it.wikisource.org/wiki/Divina_Commedia).
 
